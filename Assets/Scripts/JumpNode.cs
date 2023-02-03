@@ -1,23 +1,14 @@
-using UnityEngine;
-
-public class JumpNode : MonoBehaviour
+public class JumpNode : BaseNode
 {
-    [SerializeField]
-    private Transform m_jumpPosition;
-    
-    private GameManager m_gameManager;
     private float m_jumpForce;
 
-    private void Start()
+    protected override void Initialize()
     {
-        m_gameManager = GameManager.s_gameManager;
-        m_jumpForce = m_gameManager.Data.JumpForce;
+        m_jumpForce = m_data.JumpForce;
     }
 
-    private void OnTriggerEnter(Collider _other)
+    protected override void Activate(PlayerMovement _playerMovement)
     {
-        PlayerMovement playerMovement = _other.GetComponent<PlayerMovement>();
-        playerMovement.SetPosition(m_jumpPosition.position);
-        playerMovement.Jump(m_jumpForce);
+        _playerMovement.Jump(m_jumpForce);
     }
 }

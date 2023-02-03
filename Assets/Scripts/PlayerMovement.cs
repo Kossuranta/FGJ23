@@ -24,4 +24,9 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+
+    public void Sprint()
+    {
+        
+    }
 }
