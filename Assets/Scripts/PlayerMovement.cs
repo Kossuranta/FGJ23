@@ -16,4 +16,9 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
     }
+
+    public void Jump(float _force)
+    {
+        
+    }
 }

@@ -1,8 +1,10 @@
-using System;
 using UnityEngine;
 
 public class JumpNode : MonoBehaviour
 {
+    [SerializeField]
+    private Transform m_jumpPosition;
+    
     private GameManager m_gameManager;
     private float m_jumpForce;
 
@@ -12,8 +14,9 @@ public class JumpNode : MonoBehaviour
         m_jumpForce = m_gameManager.Data.JumpForce;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _other)
     {
-        
+        PlayerMovement playerMovement = _other.GetComponent<PlayerMovement>();
+        playerMovement.Jump(m_jumpForce);
     }
 }
