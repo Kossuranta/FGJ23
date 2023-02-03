@@ -17,6 +17,7 @@ public class JumpNode : MonoBehaviour
     private void OnTriggerEnter(Collider _other)
     {
         PlayerMovement playerMovement = _other.GetComponent<PlayerMovement>();
+        playerMovement.SetPosition(m_jumpPosition.position);
         playerMovement.Jump(m_jumpForce);
     }
 }

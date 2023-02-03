@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * Time.deltaTime * playerSpeed);
+    }
+
+    public void SetPosition(Vector3 _pos)
+    {
+        transform.position = _pos;
     }
 
     public void Jump(float _force)
