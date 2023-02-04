@@ -1,9 +1,22 @@
 using UnityEngine;
 
+public enum MoveState
+{
+    Idle,
+    Move,
+    Sprint,
+    JumpUp,
+    JumpDown,
+    Death,
+}
+
 public class PlayerMovement : MonoBehaviour
 {      
     [SerializeField]
     private Rigidbody2D m_rigidbody;
+
+    [SerializeField]
+    private PlayerAnimator m_animator;
 
     private GameManager m_gameManager;
     private float m_moveSpeed;
@@ -14,14 +27,19 @@ public class PlayerMovement : MonoBehaviour
     private bool m_isSprinting;
     private float m_sprintTimer;
 
+    public MoveState CurrentState { get; private set; }
+
     public void Initialize(GameManager _gameManager)
     {
         m_gameManager = _gameManager;
+        CurrentState = MoveState.Idle;
         
         m_moveSpeed = m_gameManager.Data.MoveSpeed;
         m_jumpForce = m_gameManager.Data.JumpForce;
         m_sprintDuration = m_gameManager.Data.SprintDuration;
         m_sprintSpeedMultiplier = m_gameManager.Data.SprintSpeedMultiplier;
+        
+        m_animator.Initilize(this);
     }
 
     private void FixedUpdate()
@@ -43,6 +61,22 @@ public class PlayerMovement : MonoBehaviour
                 m_isSprinting = false;
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (!m_gameManager.IsRunning)
+            CurrentState = MoveState.Idle;
+        else if (m_rigidbody.velocity.y > 1f)
+            CurrentState = MoveState.JumpUp;
+        else if (m_rigidbody.velocity.y < -1f)
+            CurrentState = MoveState.JumpDown;
+        else if (m_isSprinting)
+            CurrentState = MoveState.Sprint;
+        else
+            CurrentState = MoveState.Move;
+        
+        m_animator.UpdateAnimator();
     }
 
     public void SetPosition(Vector3 _pos)

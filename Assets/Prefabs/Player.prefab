@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3801545567054027518}
-  - component: {fileID: 3801545567054027519}
   - component: {fileID: 3801545567054027512}
+  - component: {fileID: 105578826632450760}
+  - component: {fileID: 3801545567054027519}
   - component: {fileID: 3801545567054027517}
   - component: {fileID: 3801545567054027516}
   m_Layer: 0
@@ -35,6 +36,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3801545567054027512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801545567054027513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fe0fc69e2c3b647b007e241b3709f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rigidbody: {fileID: 3801545567054027517}
+  m_animator: {fileID: 105578826632450760}
+--- !u!114 &105578826632450760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801545567054027513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025f579e5b054dd4b82c79a5f29384a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerImage: {fileID: 3801545567054027519}
+  m_animationDelay: 0.5
+  m_idleSprites:
+  - {fileID: 1145420150, guid: e28bf9ca393a33a46865f9db82ac2850, type: 3}
+  - {fileID: 30229575, guid: e28bf9ca393a33a46865f9db82ac2850, type: 3}
+  - {fileID: -1568768329, guid: e28bf9ca393a33a46865f9db82ac2850, type: 3}
+  m_moveSprites:
+  - {fileID: 463488513, guid: 8d8f668b1b5c8a74893fb3fe54bb499f, type: 3}
+  - {fileID: 1010620746, guid: 8d8f668b1b5c8a74893fb3fe54bb499f, type: 3}
+  m_sprintSprites:
+  - {fileID: 21300000, guid: 69b579a046c60504ca6e8e1e5a7e15d2, type: 3}
+  m_jumpUpSprites:
+  - {fileID: 21300000, guid: 4f5f4950c1d5e9a45ba7d5a0b557e7a2, type: 3}
+  m_jumpDownSprites:
+  - {fileID: 21300000, guid: 954db9b65ae6ba442a56ece77813b449, type: 3}
+  m_deathSprites:
+  - {fileID: 21300000, guid: 0b44abaf14f30054a93e85e6743543b5, type: 3}
 --- !u!212 &3801545567054027519
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,19 +131,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3801545567054027512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3801545567054027513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fe0fc69e2c3b647b007e241b3709f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rigidbody: {fileID: 3801545567054027517}
 --- !u!50 &3801545567054027517
 Rigidbody2D:
   serializedVersion: 4
