@@ -19,13 +19,38 @@ public class GameManager : MonoBehaviour
             s_instance = value;
         }
     }
+
+    [SerializeField]
+    private PlayerMovement m_playerPrefab;
+    
+    [SerializeField]
+    private CameraController m_cameraPrefab;
+
+    public SpawnPoint SpawnPoint { get; private set; }
     public Data Data { get; private set; }
+    
+    public PlayerMovement Player { get; private set; }
+    public CameraController Camera { get; private set; }
 
     private void Awake()
     {
         Instance = this;
         if (s_instance != this)
             return;
+
+        SpawnPoint = FindObjectOfType<SpawnPoint>();
+        if (SpawnPoint == null)
+            Debug.LogError("Scene is missing SpawnPoint!");
+
         Data = new Data();
+    }
+
+    private void Start()
+    {
+        Player = Instantiate(m_playerPrefab);
+        Player.SetPosition(SpawnPoint.Position);
+
+        Camera = Instantiate(m_cameraPrefab);
+        Camera.Initialize(Player);
     }
 }
