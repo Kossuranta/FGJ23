@@ -108,7 +108,7 @@ Transform:
   - {fileID: 1721781786672217854}
   - {fileID: 6942503477056813062}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4887326967985842889
 GameObject:
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.035029817, g: 0.990566, b: 0, a: 1}
+  m_Color: {r: 0.8962264, g: 0.115551144, b: 0.51575947, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
