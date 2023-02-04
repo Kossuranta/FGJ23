@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_deathHeight: -2
+  m_eventSystemPrefab: {fileID: 3421736747057007699, guid: a8036b8c526ca9249b1d5c8efa960759, type: 3}
   m_playerPrefab: {fileID: 3801545567054027512, guid: dcc5d5e1e18ca214ebc1c1e0f91c0cab, type: 3}
   m_cameraPrefab: {fileID: 6931816804870061969, guid: 595658d12b90b2b4cade57a95247ff21, type: 3}
   m_uiManagerPrefab: {fileID: 2869605902044675, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}

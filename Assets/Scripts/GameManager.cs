@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public enum CollectibleType
@@ -33,6 +34,9 @@ public class GameManager : MonoBehaviour
     private float m_deathHeight;
 
     [SerializeField]
+    private EventSystem m_eventSystemPrefab;
+
+    [SerializeField]
     private PlayerMovement m_playerPrefab;
     
     [SerializeField]
@@ -62,6 +66,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
         if (s_instance != this)
             return;
+
+        EventSystem eventSystem = FindObjectOfType<EventSystem>();
+        if (eventSystem == null)
+            Instantiate(m_eventSystemPrefab);
 
         SpawnPoint = FindObjectOfType<SpawnPoint>();
         if (SpawnPoint == null)
