@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private float m_sprintDuration;
     private float m_sprintSpeedMultiplier;
 
-    private bool m_isSprinting;
+    private bool  m_isSprinting;
     private float m_sprintTimer;
 
     public MoveState CurrentState { get; private set; }
