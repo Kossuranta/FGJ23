@@ -34,12 +34,17 @@ public class PlayerMovement : MonoBehaviour
         m_gameManager = _gameManager;
         CurrentState = MoveState.Idle;
         
+        m_animator.Initilize(this);
+        
+        ResetValues();
+    }
+
+    public void ResetValues()
+    {
         m_moveSpeed = m_gameManager.Data.MoveSpeed;
         m_jumpForce = m_gameManager.Data.JumpForce;
         m_sprintDuration = m_gameManager.Data.SprintDuration;
         m_sprintSpeedMultiplier = m_gameManager.Data.SprintSpeedMultiplier;
-        
-        m_animator.Initilize(this);
     }
 
     private void FixedUpdate()

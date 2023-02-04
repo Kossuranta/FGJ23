@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     {
         IsRunning = false;
         Player.SetPosition(SpawnPoint.Position);
+        Player.ResetValues();
         a_runReset?.Invoke();
     }
 }
