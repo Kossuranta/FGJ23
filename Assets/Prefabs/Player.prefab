@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 3801545567054027517}
   m_animator: {fileID: 105578826632450760}
+  m_collider: {fileID: 3801545567054027516}
 --- !u!114 &105578826632450760
 MonoBehaviour:
   m_ObjectHideFlags: 0

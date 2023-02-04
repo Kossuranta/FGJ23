@@ -59,12 +59,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Camera = Instantiate(m_cameraPrefab);
         Player = Instantiate(m_playerPrefab);
+        Camera.Initialize(Player);
         Player.Initialize(this);
         Player.SetPosition(SpawnPoint.Position);
-
-        Camera = Instantiate(m_cameraPrefab);
-        Camera.Initialize(Player);
 
         UIManager = Instantiate(m_uiManagerPrefab);
         UIManager.Initialize(this);
@@ -73,7 +72,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Player.transform.position.y < m_deathHeight)
-            RunReset();
+            Player.Die();
     }
 
     public void RunStart()

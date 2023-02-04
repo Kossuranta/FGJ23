@@ -1,12 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleDeathOnCollision : MonoBehaviour
 {   
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D _collision)
     {   
-        GameManager.Instance.RunReset();          
+        PlayerMovement playerMovement = _collision.transform.GetComponent<PlayerMovement>();
+
+        if (playerMovement == null)
+        {
+            Debug.LogError("OnCollisionEnter2D called, but other collider doesn't have PlayerMovement component!");
+            return;
+        }
+        
+        playerMovement.Die();
     }
     
 }

@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerAnimator m_animator;
 
+    [SerializeField]
+    private Collider2D m_collider;
+
     private GameManager m_gameManager;
     private float m_moveSpeed;
     private float m_jumpForce;
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool  m_isSprinting;
     private float m_sprintTimer;
+    private bool m_isDead;
 
     public MoveState CurrentState { get; private set; }
 
@@ -41,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResetValues()
     {
+        m_gameManager.Camera.IsFollowing = true;
+        m_isDead = false;
+        m_isSprinting = false;
+        m_collider.enabled = true;
         m_moveSpeed = m_gameManager.Data.MoveSpeed;
         m_jumpForce = m_gameManager.Data.JumpForce;
         m_sprintDuration = m_gameManager.Data.SprintDuration;
@@ -49,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (m_isDead)
+            return;
+
         if (!m_gameManager.IsRunning)
         {
             m_rigidbody.velocity = Vector2.zero;
@@ -70,7 +81,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!m_gameManager.IsRunning)
+        if (m_isDead)
+            CurrentState = MoveState.Death;
+        else if (!m_gameManager.IsRunning)
             CurrentState = MoveState.Idle;
         else if (m_rigidbody.velocity.y > 1f)
             CurrentState = MoveState.JumpUp;
@@ -82,6 +95,23 @@ public class PlayerMovement : MonoBehaviour
             CurrentState = MoveState.Move;
         
         m_animator.UpdateAnimator();
+    }
+
+    public void Die()
+    {
+        if (m_isDead)
+            return;
+        
+        m_isDead = true;
+        m_collider.enabled = false;
+        m_rigidbody.velocity = new Vector2(0, 3f);
+        m_gameManager.Camera.IsFollowing = false;
+        Invoke(nameof(RunReset), 2.5f);
+    }
+
+    public void RunReset()
+    {
+        m_gameManager.RunReset();
     }
 
     public void SetPosition(Vector3 _pos)

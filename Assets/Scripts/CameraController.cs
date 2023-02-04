@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
 
     private PlayerMovement m_player = null;
     private Vector3 m_velocity = Vector3.zero;
+    
+    public bool IsFollowing { get; set; }
 
     public void Initialize(PlayerMovement _player)
     {
@@ -23,6 +25,7 @@ public class CameraController : MonoBehaviour
     {
         if (m_player == null) return;
         if (m_camera == null) return;
+        if (!IsFollowing) return;
 
         Vector3 playerPos = m_player.transform.localPosition + m_cameraOffset;
         Vector3 point = m_camera.WorldToViewportPoint(playerPos);
