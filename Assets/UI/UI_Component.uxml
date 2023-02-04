@@ -1,8 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:ListView focusable="true" name="Modifiers" virtualization-method="FixedHeight" show-border="false" horizontal-scrolling="false" show-bound-collection-size="false" style="height: 280px; width: 149px; align-self: flex-end; opacity: 1; justify-content: flex-start; align-items: auto; flex-direction: column; position: relative;" />
-    <ui:Label tabindex="-1" text="Speed" display-tooltip-when-elided="true" name="Run_Speed" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: -209px; left: -100px;" />
-    <ui:Label tabindex="-1" text="Jump_Height" display-tooltip-when-elided="true" name="Jump_Height" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: -189px; left: -100px;" />
-    <ui:Label tabindex="-1" text="Sprint_Speed" display-tooltip-when-elided="true" name="Sprint_Speed" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: -166px; left: -100px;" />
-    <ui:Label tabindex="-1" text="Shoot_Force" display-tooltip-when-elided="true" name="Shoot_Force" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: -143px; left: -100px;" />
-    <ui:Label tabindex="-1" text="Gravity" display-tooltip-when-elided="true" name="Gravity" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: -114px; left: -100px;" />
+    <ui:VisualElement name="VisualElement" style="background-color: rgb(255, 255, 255); opacity: 1; height: 421px; width: 209px; -unity-background-image-tint-color: rgb(255, 255, 255); align-self: flex-end; position: absolute; bottom: 2px; top: 3px; left: 420px; right: -1px;" />
+    <ui:Label tabindex="-1" text="Run Speed" display-tooltip-when-elided="true" name="Run_Speed" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: 70px; left: -100px;">
+        <ui:Slider picking-mode="Ignore" value="42" high-value="100" direction="Horizontal" name="Slider" style="width: 113px; top: 32px; height: 29px; align-items: auto; justify-content: flex-start; align-self: flex-end; left: 70px;" />
+    </ui:Label>
+    <ui:Label tabindex="-1" text="Jump Height" display-tooltip-when-elided="true" name="Jump_Height" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: 110px; left: -100px;">
+        <ui:Slider picking-mode="Ignore" value="42" high-value="100" direction="Horizontal" name="Slider" style="width: 113px; top: 32px; height: 29px; align-items: auto; justify-content: flex-start; align-self: flex-end; left: 70px;" />
+    </ui:Label>
+    <ui:Label tabindex="-1" text="Sprint Speed" display-tooltip-when-elided="true" name="Sprint_Speed" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: 160px; left: -100px;">
+        <ui:Slider picking-mode="Ignore" value="42" high-value="100" direction="Horizontal" name="Slider" style="width: 113px; top: 32px; height: 29px; align-items: auto; justify-content: flex-start; align-self: flex-end; left: 70px;" />
+    </ui:Label>
+    <ui:Label tabindex="-1" text="Gravity" display-tooltip-when-elided="true" name="Gravity" style="height: 25px; width: 43px; align-self: flex-end; align-items: auto; justify-content: center; -unity-text-align: lower-left; top: 200px; left: -100px;">
+        <ui:Slider picking-mode="Ignore" value="42" high-value="100" direction="Horizontal" name="Slider" style="width: 113px; top: 32px; height: 29px; align-items: auto; justify-content: flex-start; align-self: flex-end; left: 70px;" />
+    </ui:Label>
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(255, 255, 255); height: 88px; width: 415px; position: absolute; top: 335px; left: 0; bottom: 0;" />
 </ui:UXML>
