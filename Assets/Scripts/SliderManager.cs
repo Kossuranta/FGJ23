@@ -1,51 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SliderManager : MonoBehaviour
 {
     [SerializeField]
-    private Slider m_runSpeed;
+    private Slider m_moveSpeed;
 
+    [SerializeField]
+    private TextMeshProUGUI m_moveSpeedValue;
+    
+    [SerializeField]
+    private Slider m_sprintDuration;
+    
+    [SerializeField]
+    private TextMeshProUGUI m_sprintDurationValue;
+
+    [SerializeField]
+    private Slider m_sprintSpeedMultiplier;
+    
+    [SerializeField]
+    private TextMeshProUGUI m_sprintSpeedMultiplierValue;
+    
     [SerializeField]
     private Slider m_jumpHeight;
-
+    
     [SerializeField]
-    private Slider m_sprintSpeed;
+    private TextMeshProUGUI m_jumpHeightValue;
 
     [SerializeField]
     private Slider m_gravity;
+    
+    [SerializeField]
+    private TextMeshProUGUI m_gravityValue;
 
     private Data m_data;
 
-    void Awake()
+    public void Initialize(GameManager _gameManager)
     {
-        m_data = GameManager.Instance.Data;
+        m_data = _gameManager.Data;
 
-        m_runSpeed.onValueChanged.AddListener(OnMoveSpeedChanged);
+        m_moveSpeed.onValueChanged.AddListener(OnMoveSpeedChanged);
+        m_sprintDuration.onValueChanged.AddListener(OnSprintDurationChanged);
+        m_sprintSpeedMultiplier.onValueChanged.AddListener(OnSprintSpeedMultiplierChanged);
         m_jumpHeight.onValueChanged.AddListener(OnJumpSpeedChanged);
-        m_sprintSpeed.onValueChanged.AddListener(OnSprintSpeedChanged);
         m_gravity.onValueChanged.AddListener(OnGravityChanged);
     }
 
-    void OnMoveSpeedChanged(float _value)
+    private void OnMoveSpeedChanged(float _value)
     {
-        m_data.MoveSpeed = m_runSpeed.value;
+        m_moveSpeedValue.text = _value.ToString("F1");
+        m_data.MoveSpeed = _value;
     }
 
-    void OnJumpSpeedChanged(float _value)
+    private void OnSprintDurationChanged(float _value)
     {
-        m_data.JumpForce = m_jumpHeight.value;
+        m_sprintDurationValue.text = _value.ToString("F1");
+        m_data.SprintDuration = _value;
     }
 
-    void OnSprintSpeedChanged(float _value)
+    private void OnSprintSpeedMultiplierChanged(float _value)
     {
-        m_data.SprintSpeedMultiplier = Mathf.RoundToInt(m_sprintSpeed.value);
+        int value = Mathf.RoundToInt(_value);
+        m_sprintSpeedMultiplierValue.text = $"x{value}";
+        m_data.SprintSpeedMultiplier = value;
+    }
+    
+    private void OnJumpSpeedChanged(float _value)
+    {
+        m_jumpHeightValue.text = _value.ToString("F1");
+        m_data.JumpForce = _value;
     }
 
-    void OnGravityChanged(float _value)
+    private void OnGravityChanged(float _value)
     {
-        m_data.Gravity = m_gravity.value;
+        m_gravityValue.text = _value.ToString("F1");
+        m_data.Gravity = -_value;
     }
 }
