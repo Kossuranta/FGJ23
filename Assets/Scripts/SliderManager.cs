@@ -19,18 +19,33 @@ public class SliderManager : MonoBehaviour
 
     private Data m_data;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-    //    m_runSpeed = MoveSpeed;
-    //    m_jumpHeight = JumpForce;
-    //    m_sprintSpeed = SprintSpeedMultiplier;
-    //    m_gravity = Gravity;
+        m_data = GameManager.Instance.Data;
+
+        m_runSpeed.onValueChanged.AddListener(OnMoveSpeedChanged);
+        m_jumpHeight.onValueChanged.AddListener(OnJumpSpeedChanged);
+        m_sprintSpeed.onValueChanged.AddListener(OnSprintSpeedChanged);
+        m_gravity.onValueChanged.AddListener(OnGravityChanged);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMoveSpeedChanged(float _value)
     {
-        
+        m_data.MoveSpeed = m_runSpeed.value;
+    }
+
+    void OnJumpSpeedChanged(float _value)
+    {
+        m_data.JumpForce = m_jumpHeight.value;
+    }
+
+    void OnSprintSpeedChanged(float _value)
+    {
+        m_data.SprintSpeedMultiplier = Mathf.RoundToInt(m_sprintSpeed.value);
+    }
+
+    void OnGravityChanged(float _value)
+    {
+        m_data.Gravity = m_gravity.value;
     }
 }
