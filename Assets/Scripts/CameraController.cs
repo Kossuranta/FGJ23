@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     private float m_dampTime = 0.15f;
 
     [SerializeField]
-    private Vector3 m_cameraOffset = new (6f, 0, -10f);
+    private Vector3 m_cameraOffset = new (6f, -4, -10);
 
     private PlayerMovement m_player = null;
     private Vector3 m_velocity = Vector3.zero;
