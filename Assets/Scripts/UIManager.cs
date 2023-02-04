@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     
     [SerializeField]
     private Button m_btnReset;
+
     
     private GameManager m_gameManager;
     
