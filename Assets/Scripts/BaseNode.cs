@@ -11,7 +11,7 @@ public abstract class BaseNode : MonoBehaviour
 
     private void Start()
     {
-        m_gameManager = GameManager.s_gameManager;
+        m_gameManager = GameManager.Instance;
         m_data = m_gameManager.Data;
         Initialize();
     }
