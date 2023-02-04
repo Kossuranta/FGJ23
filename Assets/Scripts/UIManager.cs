@@ -19,18 +19,19 @@ public class UIManager : MonoBehaviour
         m_btnReset.onClick.AddListener(RunReset);
         
         UpdateButtonStates();
+
+        m_gameManager.a_runStart += UpdateButtonStates;
+        m_gameManager.a_runReset += UpdateButtonStates;
     }
     
     private void RunStart()
     {
         m_gameManager.RunStart();
-        UpdateButtonStates();
     }
 
     private void RunReset()
     {
         m_gameManager.RunReset();
-        UpdateButtonStates();
     }
 
     private void UpdateButtonStates()

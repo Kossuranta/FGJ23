@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField]
+    private float m_deathHeight;
+
+    [SerializeField]
     private PlayerMovement m_playerPrefab;
     
     [SerializeField]
@@ -36,6 +40,9 @@ public class GameManager : MonoBehaviour
     public UIManager UIManager { get; private set; }
     
     public bool IsRunning { get; private set; }
+
+    public Action a_runStart;
+    public Action a_runReset;
 
     private void Awake()
     {
@@ -63,14 +70,22 @@ public class GameManager : MonoBehaviour
         UIManager.Initialize(this);
     }
 
+    private void Update()
+    {
+        if (Player.transform.position.y < m_deathHeight)
+            RunReset();
+    }
+
     public void RunStart()
     {
         IsRunning = true;
+        a_runStart?.Invoke();
     }
 
     public void RunReset()
     {
         IsRunning = false;
         Player.SetPosition(SpawnPoint.Position);
+        a_runReset?.Invoke();
     }
 }
