@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f03c0dd4241e4f209f1e826fa682eea
+guid: a64f7c721048c491e87d7246bf6592da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,43 +107,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_sprite-01_0
+      name: altar_0
       rect:
         serializedVersion: 2
-        x: 84
+        x: 0
         y: 0
-        width: 402
-        height: 320
-      alignment: 9
-      pivot: {x: 0.6533028, y: 0.56797177}
+        width: 324
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e28225ce243a4bbba9e6e89b4a2e33e
-      internalID: -1287735090
+      spriteID: 9e21f24140af84d0d802dd690e016565
+      internalID: -146984400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_sprite-01_1
+      name: altar_1
       rect:
         serializedVersion: 2
-        x: 597
+        x: 375
         y: 0
-        width: 403
-        height: 320
-      alignment: 9
-      pivot: {x: 0.63493145, y: 0.5623075}
+        width: 326
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0382426500a584208a0e0e670a248913
-      internalID: 1526158488
+      spriteID: 39ba43310507a4cd7bab3f7e72f4ff99
+      internalID: -21017349
       vertices: []
       indices: 
       edges: []
@@ -159,8 +159,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dash_sprite-01_0: -1287735090
-      dash_sprite-01_1: 1526158488
+      altar_0: -146984400
+      altar_1: -21017349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
