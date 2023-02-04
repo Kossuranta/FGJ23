@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private float m_moveSpeed;
     private float m_jumpForce;
     private float m_sprintDuration;
-    private int m_sprintSpeedMultiplier;
+    private float m_sprintSpeedMultiplier;
+    private float m_timeUntilSprintEnds;
 
     public void Initialize(GameManager _gameManager)
     {
@@ -31,6 +32,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         m_rigidbody.velocity = new Vector2(m_moveSpeed, m_rigidbody.velocity.y);
+
+        m_timeUntilSprintEnds -= Time.fixedDeltaTime;
+
+        if (m_timeUntilSprintEnds <= 0)
+        {
+            m_moveSpeed = m_gameManager.Data.MoveSpeed;
+        }
+        
     }
 
     public void SetPosition(Vector3 _pos)
@@ -40,11 +49,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        // TODO: Implement gravity and vertical movement first to movement
+        // TODO: Implement gravity and vertical movement first to movement        
     }
 
     public void Sprint()
-    {
-        
-    }
+    {        
+        m_moveSpeed = m_moveSpeed * m_sprintSpeedMultiplier;
+        m_timeUntilSprintEnds = m_sprintDuration;
+                         
+    } 
 }
