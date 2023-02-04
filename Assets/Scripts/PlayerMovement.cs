@@ -8,14 +8,17 @@ public class PlayerMovement : MonoBehaviour
     private float m_moveSpeed;
     private GameManager m_gameManager;
 
-    private void Start()
+    public void Initialize()
     {
         m_gameManager = GameManager.Instance;
         m_moveSpeed = m_gameManager.Data.MoveSpeed;
     }
-    
+
     private void FixedUpdate()
     {
+        if (!m_gameManager.IsRunning)
+            return;
+        
         m_rigidbody.MovePosition((Vector2)transform.position + Vector2.right * (Time.deltaTime * m_moveSpeed));
     }
 
