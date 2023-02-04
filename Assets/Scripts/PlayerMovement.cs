@@ -4,14 +4,21 @@ public class PlayerMovement : MonoBehaviour
 {      
     [SerializeField]
     private Rigidbody2D m_rigidbody;
-    
-    private float m_moveSpeed;
-    private GameManager m_gameManager;
 
-    public void Initialize()
+    private GameManager m_gameManager;
+    private float m_moveSpeed;
+    private float m_jumpForce;
+    private float m_sprintDuration;
+    private int m_sprintSpeedMultiplier;
+
+    public void Initialize(GameManager _gameManager)
     {
-        m_gameManager = GameManager.Instance;
+        m_gameManager = _gameManager;
+        
         m_moveSpeed = m_gameManager.Data.MoveSpeed;
+        m_jumpForce = m_gameManager.Data.JumpForce;
+        m_sprintDuration = m_gameManager.Data.SprintDuration;
+        m_sprintSpeedMultiplier = m_gameManager.Data.SprintSpeedMultiplier;
     }
 
     private void FixedUpdate()
@@ -27,9 +34,9 @@ public class PlayerMovement : MonoBehaviour
         transform.position = _pos;
     }
 
-    public void Jump(float _force)
+    public void Jump()
     {
-        
+        // TODO: Implement gravity and vertical movement first to movement
     }
 
     public void Sprint()

@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     public SpawnPoint SpawnPoint { get; private set; }
     public Data Data { get; private set; }
-    
     public PlayerMovement Player { get; private set; }
     public CameraController Camera { get; private set; }
     public UIManager UIManager { get; private set; }
@@ -54,7 +53,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Player = Instantiate(m_playerPrefab);
-        Player.Initialize();
+        Player.Initialize(this);
         Player.SetPosition(SpawnPoint.Position);
 
         Camera = Instantiate(m_cameraPrefab);
