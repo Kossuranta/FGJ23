@@ -40,6 +40,12 @@ public class SliderManager : MonoBehaviour
     {
         m_data = _gameManager.Data;
 
+        OnMoveSpeedChanged(m_data.MoveSpeed);
+        OnSprintDurationChanged(m_data.SprintDuration);
+        OnSprintSpeedMultiplierChanged(m_data.SprintSpeedMultiplier);
+        OnJumpSpeedChanged(m_data.JumpForce);
+        OnGravityChanged(m_data.Gravity);
+
         m_moveSpeed.onValueChanged.AddListener(OnMoveSpeedChanged);
         m_sprintDuration.onValueChanged.AddListener(OnSprintDurationChanged);
         m_sprintSpeedMultiplier.onValueChanged.AddListener(OnSprintSpeedMultiplierChanged);

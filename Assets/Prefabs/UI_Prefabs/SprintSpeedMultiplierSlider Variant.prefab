@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1495634946238037510, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
       propertyPath: m_Name
-      value: SprintSpeedMultiplierSlider
+      value: SprintSpeedMultiplierSlider Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4282848841489758816, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
       propertyPath: m_Pivot.x
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4282848841489758816, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4282848841489758816, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
       propertyPath: m_SizeDelta.y
@@ -116,9 +116,41 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7037198633031311855, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037198633031311855, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037198633031311855, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7112067687982015386, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
       propertyPath: m_text
       value: Dash Multiplier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373577802363071752, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373577802363071752, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373577802363071752, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303429180682775671, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303429180682775671, guid: f574a860fdb98b248ada532af87b4f98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

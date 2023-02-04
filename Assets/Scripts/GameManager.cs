@@ -75,7 +75,14 @@ public class GameManager : MonoBehaviour
         if (SpawnPoint == null)
             Debug.LogError("Scene is missing SpawnPoint!");
 
-        Data = new Data();
+        Data = new Data
+        {
+            MoveSpeed = PlayerPrefs.GetFloat("MoveSpeed", 0f),
+            SprintDuration = PlayerPrefs.GetFloat("SprintDuration", 0f),
+            SprintSpeedMultiplier = PlayerPrefs.GetInt("SprintSpeedMultiplier", 0),
+            JumpForce = PlayerPrefs.GetFloat("JumpForce", 0f),
+            Gravity = PlayerPrefs.GetFloat("Gravity", 0f)
+        };
     }
 
     private void Start()
@@ -105,6 +112,12 @@ public class GameManager : MonoBehaviour
 
     public void RunReset()
     {
+        PlayerPrefs.SetFloat("MoveSpeed", Data.MoveSpeed);
+        PlayerPrefs.SetFloat("SprintDuration", Data.SprintDuration);
+        PlayerPrefs.SetInt("SprintSpeedMultiplier", Data.SprintSpeedMultiplier);
+        PlayerPrefs.SetFloat("JumpForce", Data.JumpForce);
+        PlayerPrefs.SetFloat("Gravity", Data.Gravity);
+        
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
