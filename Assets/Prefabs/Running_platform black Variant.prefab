@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2555354515203478584, guid: b70c60ffb489b488197c24741c47d268, type: 3}
       propertyPath: m_Name
-      value: Running_platform black
+      value: Running_platform black Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4881154510369001841, guid: b70c60ffb489b488197c24741c47d268, type: 3}
       propertyPath: m_Color.b

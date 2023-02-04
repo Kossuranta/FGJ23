@@ -1,8 +1,8 @@
 public class Data
 {
-    public float MoveSpeed { get; set; } = 7.3f;
-    public float SprintDuration { get; set; } = 3.5f;
-    public int SprintSpeedMultiplier { get; set; } = 5;
-    public float JumpForce { get; set; } = 20.5f;
-    public float Gravity { get; set; } = 6.7f;
+    public float MoveSpeed { get; set; } = 10f;
+    public float SprintDuration { get; set; } = 3f;
+    public int SprintSpeedMultiplier { get; set; } = 2;
+    public float JumpForce { get; set; } = 12f;
+    public float Gravity { get; set; } = 9.8f;
 }
