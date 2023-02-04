@@ -2,6 +2,13 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum CollectibleType
+{
+    Heart = 0,
+    Brain = 1,
+    Chicken = 2,
+}
+
 public class GameManager : MonoBehaviour
 {
     private static GameManager s_instance;
@@ -33,14 +40,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private UIManager m_uiManagerPrefab;
+    
+    [SerializeField]
+    private Sprite[] m_collectibleSprites;
 
     public SpawnPoint SpawnPoint { get; private set; }
     public Data Data { get; private set; }
     public PlayerMovement Player { get; private set; }
     public CameraController Camera { get; private set; }
     public UIManager UIManager { get; private set; }
-    
+    public Sprite[] CollectibleSprites => m_collectibleSprites;
+
     public bool IsRunning { get; private set; }
+    public bool[] Collectibles { get; } = new bool[3];
 
     public Action a_runStart;
     public Action a_runReset;

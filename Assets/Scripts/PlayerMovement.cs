@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Collider2D m_collider;
 
-    private GameManager m_gameManager;
+    public GameManager GameManager { get; private set; }
     private float m_moveSpeed;
     private float m_jumpForce;
     private float m_sprintDuration;
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Initialize(GameManager _gameManager)
     {
-        m_gameManager = _gameManager;
+        GameManager = _gameManager;
         CurrentState = MoveState.Idle;
         
         m_animator.Initilize(this);
@@ -45,14 +45,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResetValues()
     {
-        m_gameManager.Camera.IsFollowing = true;
+        GameManager.Camera.IsFollowing = true;
         m_isDead = false;
         m_isSprinting = false;
         m_collider.enabled = true;
-        m_moveSpeed = m_gameManager.Data.MoveSpeed;
-        m_jumpForce = m_gameManager.Data.JumpForce;
-        m_sprintDuration = m_gameManager.Data.SprintDuration;
-        m_sprintSpeedMultiplier = m_gameManager.Data.SprintSpeedMultiplier;
+        m_moveSpeed = GameManager.Data.MoveSpeed;
+        m_jumpForce = GameManager.Data.JumpForce;
+        m_sprintDuration = GameManager.Data.SprintDuration;
+        m_sprintSpeedMultiplier = GameManager.Data.SprintSpeedMultiplier;
     }
 
     private void FixedUpdate()
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (m_isDead)
             return;
 
-        if (!m_gameManager.IsRunning)
+        if (!GameManager.IsRunning)
         {
             m_rigidbody.velocity = Vector2.zero;
             return;
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             m_sprintTimer -= Time.fixedDeltaTime;
             if (m_sprintTimer <= 0)
             {
-                m_moveSpeed = m_gameManager.Data.MoveSpeed;
+                m_moveSpeed = GameManager.Data.MoveSpeed;
                 m_isSprinting = false;
             }
         }
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_isDead)
             CurrentState = MoveState.Death;
-        else if (!m_gameManager.IsRunning)
+        else if (!GameManager.IsRunning)
             CurrentState = MoveState.Idle;
         else if (m_rigidbody.velocity.y > 1f)
             CurrentState = MoveState.JumpUp;
@@ -105,13 +105,13 @@ public class PlayerMovement : MonoBehaviour
         m_isDead = true;
         m_collider.enabled = false;
         m_rigidbody.velocity = new Vector2(0, 3f);
-        m_gameManager.Camera.IsFollowing = false;
+        GameManager.Camera.IsFollowing = false;
         Invoke(nameof(RunReset), 2.5f);
     }
 
     public void RunReset()
     {
-        m_gameManager.RunReset();
+        GameManager.RunReset();
     }
 
     public void SetPosition(Vector3 _pos)
