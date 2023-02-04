@@ -11,5 +11,6 @@ public class SideSliderMover : MonoBehaviour
         Vector3 startPoint = new Vector3 (0, 0, 0);
         Vector3 endPoint = new Vector3 (0, 0, 3);
         transform.position = Vector3.Lerp (startPoint, endPoint, time);
+        
     }
 }
