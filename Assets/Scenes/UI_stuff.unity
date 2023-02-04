@@ -750,7 +750,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8066455667968040764, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
       propertyPath: m_Name
-      value: UI
+      value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 8066455667968040765, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
       propertyPath: m_RootOrder
