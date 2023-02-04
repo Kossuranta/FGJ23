@@ -748,9 +748,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 29315807, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 442279162, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586305035, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 791743730, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292681061, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325068466, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894252120, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945481531, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8066455667968040764, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
       propertyPath: m_Name
-      value: UIManager
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 8066455667968040765, guid: 16b03890ef4844e4fb33d68271e052d3, type: 3}
       propertyPath: m_RootOrder
