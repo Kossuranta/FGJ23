@@ -73,7 +73,8 @@ MonoBehaviour:
   - {fileID: 463488513, guid: 8d8f668b1b5c8a74893fb3fe54bb499f, type: 3}
   - {fileID: 1010620746, guid: 8d8f668b1b5c8a74893fb3fe54bb499f, type: 3}
   m_sprintSprites:
-  - {fileID: 21300000, guid: 69b579a046c60504ca6e8e1e5a7e15d2, type: 3}
+  - {fileID: -1287735090, guid: 1f03c0dd4241e4f209f1e826fa682eea, type: 3}
+  - {fileID: 1526158488, guid: 1f03c0dd4241e4f209f1e826fa682eea, type: 3}
   m_jumpUpSprites:
   - {fileID: 21300000, guid: 4f5f4950c1d5e9a45ba7d5a0b557e7a2, type: 3}
   m_jumpDownSprites:
