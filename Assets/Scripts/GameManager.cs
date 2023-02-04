@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -83,9 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void RunReset()
     {
-        IsRunning = false;
-        Player.SetPosition(SpawnPoint.Position);
-        Player.ResetValues();
-        a_runReset?.Invoke();
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

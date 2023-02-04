@@ -13,13 +13,9 @@ public abstract class BaseNode : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D _other)
     {
         PlayerMovement playerMovement = _other.GetComponent<PlayerMovement>();
-
         if (playerMovement == null)
-        {
-            Debug.LogError("OnTriggerEnter called, but other collider doesn't have PlayerMovement component!");
             return;
-        }
-        
+
         playerMovement.SetPosition(m_playerPosition.position);
         Activate(playerMovement);
     }
