@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        // TODO: Implement gravity and vertical movement first to movement        
+        m_rigidbody.velocity = new Vector2(m_moveSpeed, m_jumpForce);
     }
 
     public void Sprint()
