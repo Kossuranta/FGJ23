@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -24,9 +25,12 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!m_gameManager.IsRunning)
+        {
+            m_rigidbody.velocity = Vector2.zero;
             return;
-        
-        m_rigidbody.MovePosition((Vector2)transform.position + Vector2.right * (Time.deltaTime * m_moveSpeed));
+        }
+
+        m_rigidbody.velocity = new Vector2(m_moveSpeed, m_rigidbody.velocity.y);
     }
 
     public void SetPosition(Vector3 _pos)
