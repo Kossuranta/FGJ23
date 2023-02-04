@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private float m_jumpForce;
     private float m_sprintDuration;
     private float m_sprintSpeedMultiplier;
-    private float m_timeUntilSprintEnds;
+
+    private bool m_isSprinting;
+    private float m_sprintTimer;
 
     public void Initialize(GameManager _gameManager)
     {
@@ -33,13 +34,15 @@ public class PlayerMovement : MonoBehaviour
 
         m_rigidbody.velocity = new Vector2(m_moveSpeed, m_rigidbody.velocity.y);
 
-        m_timeUntilSprintEnds -= Time.fixedDeltaTime;
-
-        if (m_timeUntilSprintEnds <= 0)
+        if (m_isSprinting)
         {
-            m_moveSpeed = m_gameManager.Data.MoveSpeed;
+            m_sprintTimer -= Time.fixedDeltaTime;
+            if (m_sprintTimer <= 0)
+            {
+                m_moveSpeed = m_gameManager.Data.MoveSpeed;
+                m_isSprinting = false;
+            }
         }
-        
     }
 
     public void SetPosition(Vector3 _pos)
@@ -53,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Sprint()
-    {        
-        m_moveSpeed = m_moveSpeed * m_sprintSpeedMultiplier;
-        m_timeUntilSprintEnds = m_sprintDuration;
-                         
+    {
+        m_isSprinting = true;
+        m_moveSpeed *= m_sprintSpeedMultiplier;
+        m_sprintTimer = m_sprintDuration;
     } 
 }
