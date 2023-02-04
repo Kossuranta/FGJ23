@@ -10,7 +10,7 @@ public abstract class BaseNode : MonoBehaviour
         Initialize();
     }
 
-    private void OnTriggerEnter(Collider _other)
+    private void OnTriggerEnter2D(Collider2D _other)
     {
         PlayerMovement playerMovement = _other.GetComponent<PlayerMovement>();
 
