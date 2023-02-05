@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c206d0b36cb14d7e81da0586f3b7512d, type: 3}
   m_Name: CloudConfigure
   m_EditorClassIdentifier: 
-  m_clouds: []
-  m_minSpeed: 1
-  m_maxSpeed: 5
-  m_count: 30
-  m_maxPosX: 13
+  m_clouds:
+  - m_prefab: {fileID: 6268570995668329135, guid: 31de0f89cc9404de4a984f3b25f46aba, type: 3}
+    m_minHeight: 0.05
+    m_maxHeight: 0.7
+  - m_prefab: {fileID: 6268570995668329135, guid: 1857f7232c2694a89a2f3fa31160dd3e, type: 3}
+    m_minHeight: 0.05
+    m_maxHeight: 0.7
+  - m_prefab: {fileID: 6268570995668329135, guid: bd710bdd0cb4e45d8a36fb628f6ff21e, type: 3}
+    m_minHeight: 0.05
+    m_maxHeight: 0.7
+  m_minSpeed: 0.25
+  m_maxSpeed: 0.35
+  m_count: 10
+  m_maxPosX: 300
