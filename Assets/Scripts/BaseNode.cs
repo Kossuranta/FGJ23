@@ -5,6 +5,12 @@ public abstract class BaseNode : MonoBehaviour
     [SerializeField]
     private Transform m_playerPosition;
 
+    [SerializeField]
+    private AudioClip m_clip;
+
+    [SerializeField]
+    private AudioSource m_audioSource;
+
     private void Start()
     {
         Initialize();
@@ -18,6 +24,7 @@ public abstract class BaseNode : MonoBehaviour
 
         playerMovement.SetPosition(m_playerPosition.position);
         Activate(playerMovement);
+        m_audioSource.PlayOneShot(m_clip);
     }
 
     protected abstract void Initialize();
