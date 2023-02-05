@@ -1645,6 +1645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprintDurationSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 4569235253741233593, guid: d9b8106d816daa749b06aa0ffce77a16, type: 3}
+      propertyPath: m_margin.z
+      value: 1.4681396
+      objectReference: {fileID: 0}
     - target: {fileID: 4865922767373243279, guid: d9b8106d816daa749b06aa0ffce77a16, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2123,6 +2127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprintSpeedMultiplierSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 1300226816611612573, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
+      propertyPath: m_margin.z
+      value: 1.4682617
+      objectReference: {fileID: 0}
     - target: {fileID: 2788089164021880764, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2207,6 +2215,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4139493103863707972, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139493103863707972, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5678522648495664951, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2234,6 +2250,10 @@ PrefabInstance:
     - target: {fileID: 9182232604305313350, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
       propertyPath: m_text
       value: Dash Mult.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182232604305313350, guid: 4fbaf6e5cdeddd84cbb3805e0a9907c7, type: 3}
+      propertyPath: m_margin.z
+      value: -1.4681396
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
