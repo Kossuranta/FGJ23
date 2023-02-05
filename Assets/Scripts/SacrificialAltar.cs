@@ -18,11 +18,18 @@ public class SacrificialAltar : MonoBehaviour
     [SerializeField]
     private float m_collectibleMoveSpeed = 3f;
 
+    [SerializeField]
+    private AudioSource m_audioSource;
+
+    [SerializeField]
+    private AudioClip m_clip; 
+
     private bool m_collected;
     private float m_timer;
 
     private void OnTriggerEnter2D(Collider2D _other)
-    {
+    {   
+         
         if (m_collected)
             return;
         
@@ -30,9 +37,11 @@ public class SacrificialAltar : MonoBehaviour
         if (playerMovement == null)
             return;
 
+        m_audioSource.PlayOneShot(m_clip);
         playerMovement.GameManager.Collectibles[(int)m_collectibleType] = true;
         m_spriteRenderer.sprite = playerMovement.GameManager.CollectibleSprites[(int)m_collectibleType];
         m_collected = true;
+
         StartCoroutine(ShowReward());
     }
 
