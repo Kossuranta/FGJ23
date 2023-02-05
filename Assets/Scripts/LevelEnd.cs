@@ -104,8 +104,6 @@ public class LevelEnd : MonoBehaviour
             yield return null;
         }
         
-        AudioManager.Instance.Stop();
-        
         yield return new WaitForSeconds(1f);
         if (missingCount > 0)
         {
@@ -135,7 +133,6 @@ public class LevelEnd : MonoBehaviour
             yield return new WaitForSeconds(2f);
             m_speechBubble.SetActive(false);
             m_daddySpeechAnimator.enabled = false;
-            AudioManager.Instance.Stop();
             yield return new WaitForSeconds(0.5f);
         }
 

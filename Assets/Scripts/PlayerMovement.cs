@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         m_rigidbody.velocity = new Vector2(0, 3f);
         GameManager.Camera.IsFollowing = false;
         Invoke(nameof(RunReset), 2.5f);
+        AudioManager.Instance.PlayPlayerDead();
     }
 
     public void RunReset()
@@ -130,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         m_isSprinting = true;
         m_moveSpeed *= m_sprintSpeedMultiplier;
         m_sprintTimer = m_sprintDuration;
+        AudioManager.Instance.PlayPlayerDash();
     }
     
     public void DaddySlapFly()

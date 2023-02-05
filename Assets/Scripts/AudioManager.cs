@@ -39,16 +39,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip m_daddySlap;
 
+    [SerializeField]
+    private AudioClip m_playerDied;
+
+    [SerializeField]
+    private AudioClip m_playerDash;
+
     private void Awake()
     {
         Instance = this;
         if (s_instance != this)
             return;
-    }
-
-    public void Stop()
-    {
-        //m_audioSource.Stop();
     }
 
     public void PlayPlayer()
@@ -69,12 +70,21 @@ public class AudioManager : MonoBehaviour
     
     public void PlayDaddyHappy()
     {
-        m_audioSource.clip = m_daddySpeakHappy;
-        m_audioSource.Play();
+        m_audioSource.PlayOneShot(m_daddySpeakHappy);
     }
 
     public void PlayDaddySlap()
     {
         m_audioSource.PlayOneShot(m_daddySlap);
+    }
+
+    public void PlayPlayerDead()
+    {
+        m_audioSource.PlayOneShot(m_playerDied);
+    }
+
+    public void PlayPlayerDash()
+    {
+        m_audioSource.PlayOneShot(m_playerDash);
     }
 }

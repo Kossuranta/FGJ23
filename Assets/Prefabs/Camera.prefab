@@ -128,6 +128,8 @@ MonoBehaviour:
   m_daddySpeakNeutral: {fileID: 8300000, guid: a6b576f445333ec45bc7efba6c650187, type: 3}
   m_daddySpeakHappy: {fileID: 8300000, guid: 0a406a7c2ffbe324bb7ba35ad11e2f40, type: 3}
   m_daddySlap: {fileID: 8300000, guid: f3a065fd9133ca44ba7d7b4043349f9b, type: 3}
+  m_playerDied: {fileID: 8300000, guid: d17629500d2680146b0105e63c9923c9, type: 3}
+  m_playerDash: {fileID: 8300000, guid: f9b9365d649ce3f4eb4bcc199eb451d7, type: 3}
 --- !u!82 &6698871716901433455
 AudioSource:
   m_ObjectHideFlags: 0
