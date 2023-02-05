@@ -9,15 +9,12 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button m_btnReset;
 
-    [SerializeField]
-    private SliderManager m_sliderManager;
-
+    
     private GameManager m_gameManager;
     
     public void Initialize(GameManager _gameManager)
     {
         m_gameManager = _gameManager;
-        m_sliderManager.Initialize(_gameManager);
         
         m_btnStart.onClick.AddListener(RunStart);
         m_btnReset.onClick.AddListener(RunReset);

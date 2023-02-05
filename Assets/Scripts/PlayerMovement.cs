@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         m_isDead = false;
         m_isSprinting = false;
         m_collider.enabled = true;
-        
         m_moveSpeed = GameManager.Data.MoveSpeed;
         m_jumpForce = GameManager.Data.JumpForce;
         m_sprintDuration = GameManager.Data.SprintDuration;
