@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!GameManager.IsRunning)
         {
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.velocity = new Vector2(0, m_rigidbody.velocity.y);
             return;
         }
 
