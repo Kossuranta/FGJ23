@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void RunStart()
     {
+        SaveSliderValues();
         IsRunning = true;
         Player.ResetValues();
         a_runStart?.Invoke();
@@ -115,12 +116,6 @@ public class GameManager : MonoBehaviour
 
     public void RunReset()
     {
-        PlayerPrefs.SetFloat("MoveSpeed", Data.MoveSpeed);
-        PlayerPrefs.SetFloat("SprintDuration", Data.SprintDuration);
-        PlayerPrefs.SetInt("SprintSpeedMultiplier", Data.SprintSpeedMultiplier);
-        PlayerPrefs.SetFloat("JumpForce", Data.JumpForce);
-        PlayerPrefs.SetFloat("Gravity", Data.Gravity);
-        
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
@@ -139,5 +134,14 @@ public class GameManager : MonoBehaviour
     public void EndAnimationCompleted()
     {
         UIManager.ShowLevelCompletedButtons();
+    }
+
+    private void SaveSliderValues()
+    {
+        PlayerPrefs.SetFloat("MoveSpeed", Data.MoveSpeed);
+        PlayerPrefs.SetFloat("SprintDuration", Data.SprintDuration);
+        PlayerPrefs.SetInt("SprintSpeedMultiplier", Data.SprintSpeedMultiplier);
+        PlayerPrefs.SetFloat("JumpForce", Data.JumpForce);
+        PlayerPrefs.SetFloat("Gravity", Data.Gravity);
     }
 }

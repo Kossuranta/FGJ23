@@ -390,7 +390,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7037198633031311855}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 25
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
