@@ -184,12 +184,17 @@ public class LevelEnd : MonoBehaviour
         }
 
         m_daddyWalk.enabled = false;
-        foreach (Sprite sprite in m_daddyAngy)
+        for (int index = 0; index < m_daddyAngy.Length; index++)
         {
+            Sprite sprite = m_daddyAngy[index];
             m_daddySpriteRenderer.sprite = sprite;
+
+            if (index >= m_daddyAngy.Length - 1)
+                AudioManager.Instance.PlayDaddySlap();
+
             yield return new WaitForSeconds(0.5f);
         }
-        
+
         GameManager.Instance.Player.DaddySlapFly();
         yield return new WaitForSeconds(1f);
         

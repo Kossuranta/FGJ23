@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
@@ -29,11 +30,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip m_daddySpeakAngy;
     
-    [SerializeField]
-    private AudioClip m_playerSpeakNeutral;
+    [FormerlySerializedAs("m_playerSpeakNeutral"),SerializeField]
+    private AudioClip m_daddySpeakNeutral;
     
+    [FormerlySerializedAs("m_playerSpeakHappy"),SerializeField]
+    private AudioClip m_daddySpeakHappy;
+
     [SerializeField]
-    private AudioClip m_playerSpeakHappy;
+    private AudioClip m_daddySlap;
 
     private void Awake()
     {
@@ -44,7 +48,7 @@ public class AudioManager : MonoBehaviour
 
     public void Stop()
     {
-        m_audioSource.Stop();
+        //m_audioSource.Stop();
     }
 
     public void PlayPlayer()
@@ -55,19 +59,22 @@ public class AudioManager : MonoBehaviour
 
     public void PlayDaddyAngy()
     {
-        m_audioSource.clip = m_daddySpeakAngy;
-        m_audioSource.Play();
+        m_audioSource.PlayOneShot(m_daddySpeakAngy);
     }
     
     public void PlayDaddyNeutral()
     {
-        m_audioSource.clip = m_playerSpeakNeutral;
-        m_audioSource.Play();
+        m_audioSource.PlayOneShot(m_daddySpeakNeutral);
     }
     
     public void PlayDaddyHappy()
     {
-        m_audioSource.clip = m_playerSpeakHappy;
+        m_audioSource.clip = m_daddySpeakHappy;
         m_audioSource.Play();
+    }
+
+    public void PlayDaddySlap()
+    {
+        m_audioSource.PlayOneShot(m_daddySlap);
     }
 }

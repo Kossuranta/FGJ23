@@ -122,11 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a17faf9ba6cb77449f04588cda57df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audioSource: {fileID: 0}
-  m_playerSpeak: {fileID: 0}
-  m_daddySpeakAngy: {fileID: 0}
-  m_playerSpeakNeutral: {fileID: 0}
-  m_playerSpeakHappy: {fileID: 0}
+  m_audioSource: {fileID: 6698871716901433455}
+  m_playerSpeak: {fileID: 8300000, guid: e1fd6f8245ea5794a8953f57bbc42fbc, type: 3}
+  m_daddySpeakAngy: {fileID: 8300000, guid: be7853ddbcc943b40aa547fd1734a67f, type: 3}
+  m_daddySpeakNeutral: {fileID: 8300000, guid: a6b576f445333ec45bc7efba6c650187, type: 3}
+  m_daddySpeakHappy: {fileID: 8300000, guid: 0a406a7c2ffbe324bb7ba35ad11e2f40, type: 3}
+  m_daddySlap: {fileID: 0}
 --- !u!82 &6698871716901433455
 AudioSource:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
