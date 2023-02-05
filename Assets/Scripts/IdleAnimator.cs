@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class IdleAnimator : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class IdleAnimator : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        m_spriteRenderer.sprite = m_sprites[0];
+    }
+
     private void Update()
     {
         m_timer += Time.deltaTime;
@@ -37,9 +43,9 @@ public class IdleAnimator : MonoBehaviour
         
         m_timer = 0;
 
+        m_animationIndex++;
         if (m_animationIndex >= m_sprites.Length)
             m_animationIndex = 0;
         m_spriteRenderer.sprite = m_sprites[m_animationIndex];
-        m_animationIndex++;
     }
 }

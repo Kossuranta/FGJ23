@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public enum MoveState
@@ -129,5 +130,13 @@ public class PlayerMovement : MonoBehaviour
         m_isSprinting = true;
         m_moveSpeed *= m_sprintSpeedMultiplier;
         m_sprintTimer = m_sprintDuration;
-    } 
+    }
+    
+    public void DaddySlapFly()
+    {
+        GameManager.Camera.IsFollowing = false;
+        m_collider.enabled = false;
+        m_rigidbody.velocity = new Vector2(0, 3f);
+        GameManager.Camera.IsFollowing = false;
+    }
 }

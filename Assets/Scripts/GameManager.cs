@@ -99,6 +99,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!IsRunning)
+            return;
+        
         if (Player.transform.position.y < m_deathHeight)
             Player.Die();
     }
@@ -125,5 +128,10 @@ public class GameManager : MonoBehaviour
     public void RunCompleted()
     {
         IsRunning = false;
+    }
+
+    public void EndAnimationCompleted()
+    {
+        
     }
 }
