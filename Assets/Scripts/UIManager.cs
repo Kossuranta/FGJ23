@@ -10,6 +10,15 @@ public class UIManager : MonoBehaviour
     private Button m_btnReset;
 
     [SerializeField]
+    private Button m_btnNextLevel;
+
+    [SerializeField]
+    private Button m_btnRestart;
+
+    [SerializeField]
+    private GameObject m_levelCompletedButtons;
+
+    [SerializeField]
     private SliderManager m_sliderManager;
 
     private GameManager m_gameManager;
@@ -21,11 +30,20 @@ public class UIManager : MonoBehaviour
         
         m_btnStart.onClick.AddListener(RunStart);
         m_btnReset.onClick.AddListener(RunReset);
+        m_btnRestart.onClick.AddListener(RunReset);
+        m_btnNextLevel.onClick.AddListener(NextLevel);
         
         UpdateButtonStates();
 
         m_gameManager.a_runStart += UpdateButtonStates;
         m_gameManager.a_runReset += UpdateButtonStates;
+        
+        m_levelCompletedButtons.SetActive(false);
+    }
+
+    public void ShowLevelCompletedButtons()
+    {
+        m_levelCompletedButtons.SetActive(true);
     }
     
     private void RunStart()
@@ -35,7 +53,14 @@ public class UIManager : MonoBehaviour
 
     private void RunReset()
     {
+        m_levelCompletedButtons.SetActive(false);
         m_gameManager.RunReset();
+    }
+
+    private void NextLevel()
+    {
+        m_levelCompletedButtons.SetActive(false);
+        m_gameManager.NextLevel();
     }
 
     private void UpdateButtonStates()

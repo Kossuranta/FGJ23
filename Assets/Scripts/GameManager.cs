@@ -125,6 +125,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
+    public void NextLevel()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.buildIndex + 1);
+    }
+
     public void RunCompleted()
     {
         IsRunning = false;
@@ -132,6 +138,6 @@ public class GameManager : MonoBehaviour
 
     public void EndAnimationCompleted()
     {
-        
+        UIManager.ShowLevelCompletedButtons();
     }
 }
