@@ -121,4 +121,9 @@ public class GameManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
+
+    public void RunCompleted()
+    {
+        IsRunning = false;
+    }
 }
