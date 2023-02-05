@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
     public void RunStart()
     {
         IsRunning = true;
+        Player.ResetValues();
         a_runStart?.Invoke();
     }
 

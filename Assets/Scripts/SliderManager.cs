@@ -81,6 +81,6 @@ public class SliderManager : MonoBehaviour
     private void OnGravityChanged(float _value)
     {
         m_gravityValue.text = _value.ToString("F1");
-        m_data.Gravity = -_value;
+        m_data.Gravity = _value;
     }
 }

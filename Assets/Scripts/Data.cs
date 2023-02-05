@@ -15,7 +15,7 @@ public class Data
         set
         {
             m_gravity = value;
-            Physics2D.gravity = new Vector2(0, value);
+            Physics2D.gravity = new Vector2(0, -value);
         }
     }
 }
