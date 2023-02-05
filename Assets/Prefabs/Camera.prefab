@@ -126,7 +126,7 @@ MonoBehaviour:
   m_playerSpeak: {fileID: 8300000, guid: e1fd6f8245ea5794a8953f57bbc42fbc, type: 3}
   m_daddySpeakAngy: {fileID: 8300000, guid: be7853ddbcc943b40aa547fd1734a67f, type: 3}
   m_daddySpeakNeutral: {fileID: 8300000, guid: a6b576f445333ec45bc7efba6c650187, type: 3}
-  m_daddySpeakHappy: {fileID: 8300000, guid: 0a406a7c2ffbe324bb7ba35ad11e2f40, type: 3}
+  m_daddySpeakHappy: {fileID: 8300000, guid: 8929169fc613e3b448dbb7ab50fbad0d, type: 3}
   m_daddySlap: {fileID: 8300000, guid: f3a065fd9133ca44ba7d7b4043349f9b, type: 3}
   m_playerDied: {fileID: 8300000, guid: d17629500d2680146b0105e63c9923c9, type: 3}
   m_playerDash: {fileID: 8300000, guid: f9b9365d649ce3f4eb4bcc199eb451d7, type: 3}

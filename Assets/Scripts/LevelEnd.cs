@@ -159,6 +159,7 @@ public class LevelEnd : MonoBehaviour
         GameManager.Instance.Player.DaddyHappyHidePlayer();
         m_daddySpriteRenderer.sprite = m_daddyHappyFirstSprite;
         yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlayDaddyHappy();
         m_daddyHappy.enabled = true;
         yield return new WaitForSeconds(2f);
         
