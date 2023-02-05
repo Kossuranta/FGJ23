@@ -450,7 +450,7 @@ Transform:
   - {fileID: 8295955658529052916}
   - {fileID: 2267147101575578556}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &688051824812427360
 MonoBehaviour:
@@ -908,7 +908,7 @@ MonoBehaviour:
   m_sprites:
   - {fileID: -2143696933, guid: f44e3b1d99de8a04e8f31865956ce6f5, type: 3}
   - {fileID: 2125200406, guid: f44e3b1d99de8a04e8f31865956ce6f5, type: 3}
-  m_animationDelay: 0.25
+  m_animationDelay: 0.5
 --- !u!114 &482135293
 MonoBehaviour:
   m_ObjectHideFlags: 0

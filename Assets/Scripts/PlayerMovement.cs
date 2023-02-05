@@ -139,4 +139,9 @@ public class PlayerMovement : MonoBehaviour
         m_rigidbody.velocity = new Vector2(0, 3f);
         GameManager.Camera.IsFollowing = false;
     }
+
+    public void DaddyHappyHidePlayer()
+    {
+        gameObject.SetActive(false);
+    }
 }

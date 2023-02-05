@@ -143,6 +143,7 @@ public class LevelEnd : MonoBehaviour
     
     private IEnumerator DaddyHappy()
     {
+        GameManager.Instance.Player.DaddyHappyHidePlayer();
         m_daddySpriteRenderer.sprite = m_daddyHappyFirstSprite;
         yield return new WaitForSeconds(0.5f);
         m_daddyHappy.enabled = true;
@@ -187,7 +188,7 @@ public class LevelEnd : MonoBehaviour
         
         GameManager.Instance.EndAnimationCompleted();
         
-        while (timer < 8f)
+        while (timer < 10f)
         {
             timer += Time.deltaTime;
             m_daddy.Translate(Vector3.right * (Time.deltaTime * 3f));
@@ -208,7 +209,7 @@ public class LevelEnd : MonoBehaviour
         
         GameManager.Instance.EndAnimationCompleted();
         
-        while (timer < 3f)
+        while (timer < 10f)
         {
             timer += Time.deltaTime;
             m_daddy.Translate(Vector3.right * (Time.deltaTime * 3f));
