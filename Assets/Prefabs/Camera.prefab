@@ -107,4 +107,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 6931816804870061971}
   m_dampTime: 0.15
-  m_cameraOffset: {x: 8, y: 3, z: -10}
+  m_cameraOffset: {x: 8, y: 2.65, z: -10}
