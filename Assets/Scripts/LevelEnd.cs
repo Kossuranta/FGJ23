@@ -69,6 +69,7 @@ public class LevelEnd : MonoBehaviour
     
     private IEnumerator ShowRewards()
     {
+        AudioManager.Instance.PlayPlayer();
         yield return new WaitForSeconds(1f);
 
         int missingCount = 0;
@@ -103,11 +104,25 @@ public class LevelEnd : MonoBehaviour
             yield return null;
         }
         
+        AudioManager.Instance.Stop();
+        
         yield return new WaitForSeconds(1f);
         if (missingCount > 0)
         {
             m_speechBubble.SetActive(true);
             m_daddySpeechAnimator.enabled = true;
+            switch (missingCount)
+            {
+                case 1:
+                case 2:
+                    AudioManager.Instance.PlayDaddyNeutral();
+                    break;
+                
+                case 3:
+                    AudioManager.Instance.PlayDaddyAngy();
+                    break;
+            }
+            
             for (int i = 0; i < collected.Length; i++)
             {
                 if (collected[i])
@@ -120,6 +135,7 @@ public class LevelEnd : MonoBehaviour
             yield return new WaitForSeconds(2f);
             m_speechBubble.SetActive(false);
             m_daddySpeechAnimator.enabled = false;
+            AudioManager.Instance.Stop();
             yield return new WaitForSeconds(0.5f);
         }
 
